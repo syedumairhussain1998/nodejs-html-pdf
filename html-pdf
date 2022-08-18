@@ -1,0 +1,8 @@
+            const htmlContent = "<h1>Hello World</h1>"
+            const pdfFile = `storage/invoice.pdf`
+            
+            htmlPdf
+                .create(htmlContent, { type: 'pdf', base: process.env.APP_URL })
+                .toFile(pdfFile, (error, result) => {
+                    if (error) throw new Error(error)
+                })
